@@ -8,7 +8,6 @@ import { store } from "./redux/store.ts";
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
-    {/* Dobbiamo usare perforza il provider di redux invece che anche quello per le api se usiamo entrambi */}
     <Provider store={store}>
         <BrowserRouter>
           <App />

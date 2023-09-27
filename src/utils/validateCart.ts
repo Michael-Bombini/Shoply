@@ -1,4 +1,4 @@
-import { Cart } from "../models/Product";
+import { Cart } from "../models/Cart";
 
 export function isValidCart(data: string | null): boolean {
   if (!data) {
@@ -13,10 +13,10 @@ export function isValidCart(data: string | null): boolean {
 
     for (const item of cartItems) {
       if (
+        typeof item.name !== "string" ||
         typeof item.price !== "number" ||
-        typeof item.title !== "string" ||
         typeof item.quantity !== "number" ||
-        typeof item.thumbnail !== "string"
+        typeof item.thumbnail_image !== "string"
       ) {
         return false;
       }

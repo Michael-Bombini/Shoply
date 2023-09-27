@@ -1,11 +1,16 @@
 import { useParams } from "react-router-dom";
 import { useGetProductsQuery } from "../api/apliSlice";
 import Loading from "../components/loading/LoadingHome";
-import ProductList from "../components/products/ProductList";
+import ProductDetail from "../components/products/ProductDetail";
+import NoResult from "../components/ui/NoResult";
+import useTitle from "../hooks/useTitle";
 
-export default function Product() {
+function Product() {
   const { slug } = useParams();
   const { data: products, isLoading } = useGetProductsQuery();
+
+  useTitle(slug);
+
   if (isLoading) return <Loading />;
   const product = products?.find(
     (product) => product.slug.toLowerCase() === slug?.toLowerCase()
@@ -13,22 +18,13 @@ export default function Product() {
 
   return (
     <section>
-      {/* 
-      <button
-        className="bg-blue-700 rounded-md text-white px-2 py-1 block my-6"
-        onClick={() => {
-          dispatch(
-            addProduct({
-              name: product?.name,
-              price: product?.price,
-              thumbnail_image: product?.thumbnail_image,
-            })
-          );
-          dispatch(openModal({ message: "Product added to cart" }));
-        }}
-      >
-        Add Product
-      </button> */}
+      {product ? (
+        <ProductDetail product={product} />
+      ) : (
+        <NoResult message="This product does not exist" />
+      )}
     </section>
   );
 }
+
+export default Product;

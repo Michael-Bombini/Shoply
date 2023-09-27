@@ -5,6 +5,7 @@ import SaleFilter from "../components/filters/SaleFilter";
 import CategoryFilter from "../components/filters/CategoryFilter";
 import ProductList from "../components/products/ProductList";
 import NoResult from "../components/ui/NoResult";
+import useTitle from "../hooks/useTitle";
 
 export default function Products() {
   const [params, setParams] = useSearchParams();
@@ -12,6 +13,8 @@ export default function Products() {
   const category = params.get("category");
   const sale = params.get("onSale");
   const { data: products, isLoading } = useGetProductsQuery();
+
+  useTitle(`Shoply - ${category ? category : ""}`);
   if (isLoading) return <Loading />;
 
   let categoryProducts = products;
@@ -27,8 +30,6 @@ export default function Products() {
     );
   }
 
-  console.log(onSaleProducts);
-
   return (
     <section className="">
       <div className="flex flex-wrap justify-center items-center mt-4 mb-8">
@@ -39,7 +40,7 @@ export default function Products() {
       {onSaleProducts && onSaleProducts.length > 0 ? (
         <ProductList products={onSaleProducts} />
       ) : (
-        <NoResult />
+        <NoResult message="There are no results try to change filters" />
       )}
     </section>
   );
