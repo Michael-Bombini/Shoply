@@ -25,10 +25,10 @@ export default function ProductDetail({ product }: Props) {
     <div className="max-w-screen-xl mt-14 mx-auto">
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
         <div>
-          <div className="mb-8">
+          <div className="mb-8  h-96 mx-auto">
             <img
               src={selectedThumb}
-              className="rounded-none md:rounded-lg"
+              className="rounded-none md:rounded-lg w-full h-full object-cover"
               alt=""
             />
           </div>
@@ -55,7 +55,7 @@ export default function ProductDetail({ product }: Props) {
                 {product.name}
               </h2>
               <p className="text-black/70 text-2xl font-semibold">
-                $ {product.price.toFixed(2)}
+                {product.price.toFixed(2)} €
               </p>
               <button
                 className="bg-gradient-to-br from-[#DC6161] to-red-600 rounded-md text-white px-2 py-1 block my-6 w-full"

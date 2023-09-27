@@ -24,7 +24,7 @@ export default function Modal() {
     <div
       id="toast-success"
       className={`${
-        !modal.open ? "-translate-y-full top-0 opacity-0" : " opacity-1 "
+        !modal.open ? "-translate-y-full top-0 opacity-0 z-[-1]" : " opacity-1 z-[999] "
       } flex items-center w-full max-w-xs p-4 mb-4 text-gray-500 top-1/3 bg-white rounded-lg shadow transition-all duration-500 dark:text-gray-400 dark:bg-gray-800 absolute left-1/2 -translate-x-1/2 -translate-y-1/2`}
       role="alert"
     >

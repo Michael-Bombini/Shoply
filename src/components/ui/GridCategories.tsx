@@ -1,11 +1,12 @@
 import { Link } from "react-router-dom";
 import { useGetProductsQuery } from "../../api/apliSlice";
 import electronics from "./../../assets/electronics.jpg";
+import Loading from "../loading/LoadingHome";
 
 export default function GridCategories() {
   const { data, isLoading } = useGetProductsQuery();
   if (isLoading) {
-    return <p>Loading....</p>;
+    return <Loading/>;
   }
   const onSale = data?.filter((d) => d.in_sale);
 

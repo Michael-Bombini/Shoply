@@ -18,7 +18,7 @@ export default function Product({ name, thumbnail, price, slug, sale }: Props) {
       />
       <div className="p-4">
         <h2 className="text-xl text-gray-800 font-semibold">{name}</h2>
-        <div className="text-gray-600 text-lg">${price.toFixed(2)}</div>
+        <div className="text-gray-600 text-lg">{price.toFixed(2)}€</div>
         <Link
           to={`/product/${slug}`}
           className="mt-4 inline-block bg-gradient-to-br from-[#DC6161] to-red-600 hover:scale-105 text-white py-2 px-4 rounded-md transition-all"
