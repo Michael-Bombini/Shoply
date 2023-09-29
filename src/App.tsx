@@ -5,6 +5,7 @@ import Cart from "./pages/Cart";
 import Index from "./pages/Index";
 import Product from "./pages/Product";
 import Products from "./pages/Products";
+import Completed from "./pages/Completed";
 
 export default function App() {
   return (
@@ -17,6 +18,7 @@ export default function App() {
           <Route path="/products" Component={Products} />
           <Route path="/product/:slug" Component={Product} />
           <Route path="/cart" Component={Cart} />
+          <Route path="/completed" Component={Completed} />
         </Routes>
       </main>
     </div>

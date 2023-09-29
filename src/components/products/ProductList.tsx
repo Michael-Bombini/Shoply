@@ -6,7 +6,7 @@ interface Props {
 }
 export default function ProductList({ products }: Props) {
   return (
-    <ul className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 max-w-screen-2xl mx-auto flex-1 gap-8">
+    <ul className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 max-w-screen-lg lg:max-w-screen-xl mx-auto flex-1 gap-8">
       {products.map((product) => (
         <Product
           key={product.slug}

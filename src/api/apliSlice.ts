@@ -5,7 +5,7 @@ export const apiSlice = createApi({
   reducerPath: "api",
   baseQuery: fetchBaseQuery({
     baseUrl:
-      "https://shoply-d7eed-default-rtdb.europe-west1.firebasedatabase.app",
+      import.meta.env.VITE_FIREBASE_URL,
   }),
   endpoints: (builder) => ({
     getProducts: builder.query<Product[], void>({

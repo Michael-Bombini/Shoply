@@ -32,7 +32,7 @@ export default function ProductDetail({ product }: Props) {
               alt=""
             />
           </div>
-          <div className="flex flex-wrap  justify-center gap-8 lg:justify-between w-full items-center">
+          <div className="flex flex-wrap  justify-center gap-8 w-full items-center">
             {product.images?.map((image) => (
               <div
                 className="w-32 h-32"
@@ -41,7 +41,7 @@ export default function ProductDetail({ product }: Props) {
               >
                 <img
                   src={image}
-                  className="object-cover rounded-md h-full cursor-pointer"
+                  className="object-cover rounded-md h-full cursor-pointer w-full"
                   alt={`image of ${product.name}`}
                 />
               </div>

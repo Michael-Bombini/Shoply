@@ -10,7 +10,7 @@ export default function NoResult({message}: Props) {
       <h2 className="bg-gradient-to-br  from-[#DC6161] to-red-600 text-transparent bg-clip-text text-3xl font-bold">
         Ooops!
       </h2>
-      <h3 className="text-xl text-black/70 text-center">
+      <h3 className="text-xl text-black/70 text-center max-w-sm">
         {message}
       </h3>
     </div>

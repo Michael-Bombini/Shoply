@@ -1,3 +1,4 @@
+import { useNavigate } from "react-router-dom";
 import {
   decreaseQuantity,
   emptyCart,
@@ -8,13 +9,21 @@ import { useAppDispatch, useAppSelector } from "../redux/store";
 export default function Cart() {
   const cart = useAppSelector((state) => state.cart);
   const dispatch = useAppDispatch();
+  const navigate = useNavigate();
+
+  function handleCheckout() {
+    const random = Math.floor(Math.random() * 2);
+    const state = random === 1 ? "success" : "error";
+    navigate("/completed", { state });
+    dispatch(emptyCart())
+  }
 
   return (
     <section>
       <div className="container mx-auto mt-8">
         {cart.map((item) => (
           <div
-            className="flex items-center justify-between border-b border-gray-300 py-4"
+            className="flex items-center justify-between border-b border-gray-300 py-4 px-2"
             key={item.name}
           >
             <div className="flex items-center space-x-4">
@@ -55,7 +64,7 @@ export default function Cart() {
         ))}
       </div>
       {cart.length > 0 && (
-        <div className="container mx-auto mt-8 flex justify-end">
+        <div className="container mx-auto mt-8 flex justify-end px-2">
           <div className="space-x-8">
             <button
               onClick={() => dispatch(emptyCart())}
@@ -65,6 +74,7 @@ export default function Cart() {
             </button>
             <button
               className="px-4 py-2 bg-green-500 hover:bg-green-600 text-white font-semibold rounded"
+              onClick={handleCheckout}
             >
               Checkout
             </button>
