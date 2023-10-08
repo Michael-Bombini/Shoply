@@ -25,7 +25,7 @@ export default function Modal() {
       id="toast-success"
       className={`${
         !modal.open ? "-translate-y-full top-0 opacity-0 z-[-1]" : " opacity-1 z-[999] "
-      } flex items-center w-full max-w-xs p-4 mb-4 text-gray-500 top-1/3 bg-white rounded-lg shadow transition-all duration-500 dark:text-gray-400 dark:bg-gray-800 absolute left-1/2 -translate-x-1/2 -translate-y-1/2`}
+      } flex items-center w-full max-w-xs p-4 mb-4 text-gray-500 top-1/3 bg-white rounded-lg shadow transition-all duration-500 dark:text-gray-400 dark:bg-gray-800 fixed left-1/2 -translate-x-1/2 -translate-y-1/2`}
       role="alert"
     >
       <div className="inline-flex items-center justify-center flex-shrink-0 w-8 h-8 text-green-500 bg-green-100 rounded-lg dark:bg-green-800 dark:text-green-200">
