@@ -49,11 +49,12 @@ export default function ProductDetail({ product }: Props) {
           </div>
         </div>
         <div>
-          <div className="flex flex-col justify-center items-center lg:items-start h-full">
+          <div className="flex flex-col justify-center items-center lg:items-start h-full px-4">
             <div>
               <h2 className="text-4xl font-bold text-black/80 mb-4">
                 {product.name}
               </h2>
+              {product.description && <h3 className="mb-2">{product.description}</h3>}
               <p className="text-black/70 text-2xl font-semibold">
                 {product.price.toFixed(2)} €
               </p>
